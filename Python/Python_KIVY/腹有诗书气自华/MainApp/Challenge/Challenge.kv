@@ -1,0 +1,509 @@
+<ClickButton>:
+    height: self.width
+    bg_color: app.theme_cls.primary_color
+    background_color: (1, 1, 1, 0)
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<Challenge>:
+    unclick_color: app.theme_cls.primary_color
+    click_color: app.theme_cls.primary_dark
+    last_color: app.theme_cls.primary_light
+    win: app.FinishChallenge
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: [5,5,5,20]
+        spacing: 10
+        canvas:
+            Color:
+                rgba: (0.95, 0.95, 0.95, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "./appPicture/back7.jpg"
+        BoxLayout:
+            size_hint:(1, 0.15)
+            spacing:5
+            MDIconButton:
+                pos_hint: {"center_y" : 0.5}
+                icon: "arrow-left-bold-outline"
+                on_release: app.BackChallenge()
+            Label:
+                size_hint:(0.3, 1)
+
+            MDRectangleFlatButton:
+                id:righr_answer_btn
+                size_hint: (0.4, 1)
+                pos_hint: {"center_y": .5}
+                text_color: (0.5, 0.5, 0.5, 1 )
+                line_color:(0.5, 0.5, 0.5, 1 )
+                text: "查看正确答案"
+                on_release: root.ShowTrueWay()
+            MDRectangleFlatButton:
+                size_hint: (0.15, 1)
+                pos_hint: {"center_y": .5}
+                text_color: (0.5, 0.5, 0.5, 1 )
+                line_color:(0.5, 0.5, 0.5, 1 )
+                text: "刷新"
+                on_release: root.Refresh()
+        MDLabel:
+            text: root.user_answer
+            text_color: app.theme_cls.primary_color
+            theme_text_color: "Custom"
+            halign: "center"
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+        BoxLayout:
+            id: grid
+            size_hint: (1, None)
+            height: self.width
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_0_0
+                    mypos:(0, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_1
+                    mypos:(0, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_2
+                    mypos:(0, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_3
+                    mypos:(0, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_4
+                    mypos:(0, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_5
+                    mypos:(0, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_6
+                    mypos:(0, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_7
+                    mypos:(0, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_0_8
+                    mypos:(0, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_1_0
+                    mypos:(1, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_1
+                    mypos:(1, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_2
+                    mypos:(1, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_3
+                    mypos:(1, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_4
+                    mypos:(1, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_5
+                    mypos:(1, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_6
+                    mypos:(1, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_7
+                    mypos:(1, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_1_8
+                    mypos:(1, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_2_0
+                    mypos:(2, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_1
+                    mypos:(2, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_2
+                    mypos:(2, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_3
+                    mypos:(2, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_4
+                    mypos:(2, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_5
+                    mypos:(2, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_6
+                    mypos:(2, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_7
+                    mypos:(2, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_2_8
+                    mypos:(2, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_3_0
+                    mypos:(3, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_1
+                    mypos:(3, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_2
+                    mypos:(3, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_3
+                    mypos:(3, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_4
+                    mypos:(3, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_5
+                    mypos:(3, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_6
+                    mypos:(3, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_7
+                    mypos:(3, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_3_8
+                    mypos:(3, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_4_0
+                    mypos:(4, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_1
+                    mypos:(4, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_2
+                    mypos:(4, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_3
+                    mypos:(4, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_4
+                    mypos:(4, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_5
+                    mypos:(4, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_6
+                    mypos:(4, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_7
+                    mypos:(4, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_4_8
+                    mypos:(4, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_5_0
+                    mypos:(5, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_1
+                    mypos:(5, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_2
+                    mypos:(5, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_3
+                    mypos:(5, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_4
+                    mypos:(5, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_5
+                    mypos:(5, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_6
+                    mypos:(5, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_7
+                    mypos:(5, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_5_8
+                    mypos:(5, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_6_0
+                    mypos:(6, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_1
+                    mypos:(6, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_2
+                    mypos:(6, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_3
+                    mypos:(6, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_4
+                    mypos:(6, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_5
+                    mypos:(6, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_6
+                    mypos:(6, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_7
+                    mypos:(6, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_6_8
+                    mypos:(6, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_7_0
+                    mypos:(7, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_1
+                    mypos:(7, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_2
+                    mypos:(7, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_3
+                    mypos:(7, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_4
+                    mypos:(7, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_5
+                    mypos:(7, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_6
+                    mypos:(7, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_7
+                    mypos:(7, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_7_8
+                    mypos:(7, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+
+                ClickButton:
+                    id: pos_8_0
+                    mypos:(8, 0)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_1
+                    mypos:(8, 1)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_2
+                    mypos:(8, 2)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_3
+                    mypos:(8, 3)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_4
+                    mypos:(8, 4)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_5
+                    mypos:(8, 5)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_6
+                    mypos:(8, 6)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_7
+                    mypos:(8, 7)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+                ClickButton:
+                    id: pos_8_8
+                    mypos:(8, 8)
+                    size_hint: (0.1, None)
+                    on_release: root.CheckAnswer(self)
+            
