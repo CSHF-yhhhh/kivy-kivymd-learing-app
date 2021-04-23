@@ -1,0 +1,90 @@
+<User>:
+    color: app.theme_cls.primary_palette
+    accent_palette: app.theme_cls.accent_palette
+    refresh_home: app.home_page.Refresh
+    size_hint: (1, 1)
+    radius: (app.width * 0.15)
+    canvas:
+        Color:
+            rgba: (0.95, 0.95, 0.95, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: "appPicture/back2.jpg"
+    Screen:
+        name: "Main"
+        BoxLayout:
+            
+            orientation: "vertical"
+            MDBoxLayout:#图标
+                padding: 5
+                size_hint: (1, 0.3)
+                md_bg_color: app.theme_cls.primary_color
+                Image:
+                    source: "./appPicture/icon1.png"
+                    pos_hint: {"center": 0.5}
+                
+            MDBoxLayout:
+                size_hint: (1, 0.2)
+                md_bg_color: app.theme_cls.primary_color
+                orientation: "vertical"
+                padding: 10
+                spacing: 10
+                MDLabel:
+                    text: root.username
+                    font_style: "H6"
+                    halign: "center"
+                MDLabel:
+                    text: "用户设置"
+                    font_style: "H5"
+                    halign: "center"
+            BoxLayout:
+                ScrollView:
+                    MDList:
+                        id: container
+                        spacing: 1
+                        OneLineListItem:
+                            bg_color: (0, 0, 0, 0)
+                            text: "设置每日学习个数"
+                            on_release: root.study_num_dialog.open()
+                            text_color: app.theme_cls.primary_color
+                            theme_text_color: "Custom"
+                            
+                        OneLineListItem:
+                            bg_color: (0, 0, 0, 0)
+                            text: "设置挑战难度"
+                            on_release: root.difficulty_dialog.open()
+                            text_color: app.theme_cls.primary_color
+                            theme_text_color: "Custom"
+                            
+                        
+                        OneLineListItem:
+                            bg_color: (0, 0, 0, 0)
+                            text: "清空学习记录"
+                            on_release: root.dialog.open()
+                            text_color: app.theme_cls.primary_color
+                            theme_text_color: "Custom"
+
+
+<StudyNum>:
+    orientation: "vertical"
+    spacing: 5
+    size_hint: (0.9, None)
+    BoxLayout:
+        
+        size_hint: (0.9, None)
+        pos_hint: {"center_x": .5}
+        IconLeftWidget:
+            icon: "plus"
+            on_release: root.add()
+            pos_hint: {"center_y": .5}
+        MDLabel:
+            id:input
+            text: str(int(root.num))
+            pos_hint: {"center_y": .5}
+            halign: "center"
+            valign: "center"
+        IconRightWidget:
+            icon: "minus"
+            on_release: root.sub()
+            pos_hint: {"center_y": .5}
