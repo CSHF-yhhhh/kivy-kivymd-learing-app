@@ -1,6 +1,9 @@
 # 基于 Kivy/Kivymd 开发的成语学习APP
 
 本项目已成功打包,使用的打包环境请参考[nkiiiid的文章](https://github.com/nkiiiiid/kivy-apk)
+buildozer.spec文件请参考/MainApp/buildozer.spec
+
+> 成功打包的APK已上传,可自行下载
 
 ## 环境说明
 
